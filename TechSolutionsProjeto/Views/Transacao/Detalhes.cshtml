@@ -1,0 +1,16 @@
+﻿@model TechSolutions.Web.Models.Transacoes
+
+<h2>Detalhes da Transação</h2>
+
+<p><strong>ID:</strong> @Model.TransacaoId</p>
+<p><strong>Cliente ID:</strong> @Model.ClienteId</p>
+<p><strong>Valor:</strong> @Model.Valor</p>
+<p><strong>Data da Transação:</strong> @Model.DataTransacao.ToShortDateString()</p>
+@if (Model.Valor_Previsto.HasValue)
+{
+    <p><strong>Valor Previsto:</strong> @Model.Valor_Previsto</p>
+}
+else
+{
+    <p><em>Valor Previsto ainda não calculado.</em></p>
+}

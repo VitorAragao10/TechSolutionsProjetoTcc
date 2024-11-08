@@ -1,0 +1,15 @@
+﻿@model TechSolutions.Web.Models.Cliente
+
+<h2>Detalhes do Cliente</h2>
+
+<div>
+    <h4>Nome: @Model.Nome</h4>
+    <p>Email: @Model.Email</p>
+    <p>Data de Cadastro: @Model.DataCadastro.ToShortDateString()</p>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Voltar</a>
+<a asp-action="Editar" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+<a asp-action="Deletar" asp-route-id="@Model.Id" class="btn btn-danger">Deletar</a>
+<a asp-action="Transacoes" asp-route-id="@Model.Id" class="btn btn-info">Ver Transações</a>
+

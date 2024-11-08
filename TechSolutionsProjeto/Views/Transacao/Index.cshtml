@@ -1,0 +1,31 @@
+﻿@model IEnumerable<TechSolutions.Web.Models.Transacoes>
+
+<h2>Transações dos Clientes @* @ViewBag.ClienteNome *@</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Data</th>
+            <th>Valor</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transacao in Model)
+        {
+            <tr>
+                <td>@transacao.DataTransacao.ToShortDateString()</td>
+                <td>@transacao.Valor.ToString("C")</td>
+                <td>
+                    <a asp-action="Detalhes" asp-route-id="@transacao.TransacaoId" class="btn btn-info">Detalhes</a>
+                  @*   <a asp-action="Edit" asp-route-id="@transacao.TransacaoId" class="btn btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@transacao.TransacaoId" class="btn btn-danger">Deletar</a> *@
+                    <a asp-action="CalcularValorPrevisto" asp-route-transacaoId="@transacao.TransacaoId" class="btn btn-success">Prever Valor</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="CriarTransacao" class="btn btn-success">Adicionar Transação</a>
+<a asp-action="Relatorio" asp-route-clienteId="@ViewBag.ClienteId" class="btn btn-primary">Baixar Relatório</a>

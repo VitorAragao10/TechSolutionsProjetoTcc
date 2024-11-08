@@ -1,0 +1,17 @@
+﻿@model TechSolutions.Web.Models.Cliente
+
+<h2>Deletar Cliente</h2>
+
+<p>Tem certeza de que deseja excluir o seguinte cliente?</p>
+
+<div>
+    <h4>@Model.Nome</h4>
+    <p>Email: @Model.Email</p>
+    <p>Data de Cadastro: @Model.DataCadastro.ToShortDateString()</p>
+</div>
+
+<form asp-action="DeletarCliente" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Deletar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

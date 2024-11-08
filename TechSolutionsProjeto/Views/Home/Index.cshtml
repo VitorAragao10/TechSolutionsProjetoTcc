@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Página Inicial";
+}
+
+<div class="container mt-5">
+    <h1>Bem-vindo ao Sistema da TechSolutions</h1>
+    <p class="lead">Escolha uma das opções abaixo para navegar pelo sistema.</p>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Gerenciar Clientes</h5>
+                    <p class="card-text">Acesse a lista de clientes, adicione novos e visualize detalhes.</p>
+                    <a asp-controller="Cliente" asp-action="Index" class="btn btn-primary">Acessar Clientes</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Gerenciar Transações</h5>
+                    <p class="card-text">Visualize e adicione transações dos clientes.</p>
+                    <a asp-controller="Transacao" asp-action="Index" class="btn btn-primary">Acessar Transações</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Prever Transação";
+}
+
+<h2>Prever Valor da Transação</h2>
+
+<form asp-action="PreverTransacao" method="post">
+    <div class="form-group">
+        <label>Data da Transação</label>
+        <input type="date" name="dataTransacao" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Prever</button>
+</form>
+
+@if (ViewBag.ValorPrevisto != null)
+{
+    <h3>Valor Previsto: @ViewBag.ValorPrevisto</h3>
+}

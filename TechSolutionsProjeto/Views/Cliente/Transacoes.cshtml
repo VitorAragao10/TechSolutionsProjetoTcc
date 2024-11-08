@@ -1,0 +1,23 @@
+﻿@model IEnumerable<TechSolutions.Web.Models.Transacoes>
+
+<h2>Transações do Cliente</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Valor</th>
+            <th>Data</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transacao in Model)
+        {
+            <tr>
+                <td>@transacao.Valor.ToString("C")</td>
+                <td>@transacao.DataTransacao.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Detalhes" asp-route-id="@ViewBag.ClienteId" class="btn btn-secondary">Voltar</a>
